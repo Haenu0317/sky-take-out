@@ -40,4 +40,11 @@ public interface EmployeeService {
      * @param employeeDTO
      */
     void edit(EmployeeDTO employeeDTO);
+
+    /**
+     * 根据id查询用户信息
+     * @param id
+     * @return
+     */
+    Employee getById(Long id);
 }
