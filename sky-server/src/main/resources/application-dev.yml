@@ -26,7 +26,7 @@ sky:
     privateKeyFilePath: D:\weixin\apiclient_key.pem
     apiV3Key: CZBK51236435wxpay435434323FFDuv3
     weChatPayCertFilePath: D:\weixin\wechatpay_166D96F876F45C7D07CE98952A96EC980368ACFC.pem
-    notifyUrl: https://41b205f4.r5.cpolar.top/notify/paySuccess
+    notifyUrl: https://3k6m579057.yicp.fun/notify/paySuccess
     refundNotifyUrl: https://41b205f4.r5.cpolar.top/notify/refundSuccess
 
 
