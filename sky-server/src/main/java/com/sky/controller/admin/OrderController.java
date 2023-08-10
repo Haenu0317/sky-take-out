@@ -7,6 +7,7 @@ import com.sky.dto.OrdersRejectionDTO;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.service.OrderService;
+import com.sky.service.ReportService;
 import com.sky.vo.OrderStatisticsVO;
 import com.sky.vo.OrderVO;
 import io.swagger.annotations.Api;
@@ -22,6 +23,9 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private ReportService reportService;
 
     @GetMapping("/conditionSearch")
     @ApiOperation("订单搜索")
@@ -92,6 +96,9 @@ public class OrderController {
         orderService.complete(id);
         return Result.success();
     }
+
+
+
 
 
 }
