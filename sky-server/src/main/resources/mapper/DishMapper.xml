@@ -57,5 +57,40 @@
         </where>
         order by create_time desc
     </select>
+
+
+
+    <select id="countByMap" resultType="java.lang.Integer">
+        select count(id) from dish
+        <where>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+        </where>
+    </select>
+    <select id="listWithFlavor" resultType="com.sky.vo.DishVO">
+        select
+        a.*,b.name dfName,b.value
+        from
+        dish a
+        left join
+        dish_flavor b
+        on
+        a.id = b.dish_id
+        <where>
+            <if test="name != null">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
 </mapper>
 
