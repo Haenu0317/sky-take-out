@@ -225,7 +225,6 @@ public class OrderServiceImpl implements OrderService {
         String json = JSON.toJSONString(map);
         webSocketServer.sendToAllClient(json);
 
-
     }
 
     @Override
@@ -577,9 +576,8 @@ public class OrderServiceImpl implements OrderService {
         JSONObject result = jsonObject.getJSONObject("result");
         JSONArray jsonArray = (JSONArray) result.get("routes");
         Integer distance = (Integer) ((JSONObject) jsonArray.get(0)).get("distance");
-
-        if (distance > 5000) {
-            //配送距离超过5000米
+        log.info("配送距离：{}", distance);
+        if (distance > 50000) {
             throw new OrderBusinessException("超出配送范围");
         }
     }
